@@ -1,0 +1,104 @@
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENT                                 */
+/* -------------------------------------------------------------------------- */
+
+.editor {
+    --padding-y: 4vh;
+    --padding-x: 0vh;
+    --menues-y-margin: 1vh
+}
+.editor {
+    width: 80vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3vw;
+    margin: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    MENU                                    */
+/* -------------------------------------------------------------------------- */
+
+.menu {
+    width: 20vw;
+    height: 100%;
+    padding: var(--padding-y) 1vw;
+    background-color: aliceblue;
+    display: none;
+}
+
+.config {
+    margin-bottom: var(--padding-y);
+}
+
+.config * {
+   width: 100%; 
+   margin-bottom: var(--menues-y-margin);
+}
+
+.commands {
+    display: flex;
+    flex-direction: column;
+    gap: var(--menues-y-margin);
+    align-items: center;
+}
+
+.commands * {
+    width: 100%;
+}
+
+.commands *:hover {
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    INPUT                                   */
+/* -------------------------------------------------------------------------- */
+.InputWrapper {
+    width: 60vw;
+    padding: var(--padding-y) 0px;
+    /* overflow: scroll; */
+}
+
+.Cover {
+    margin-bottom: var(--padding-y);
+}
+
+.TitleForm {
+    border: none;
+}
+
+.TitleForm input {
+    display: block;
+    width: 100%;
+    font-size: 3em;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.841);
+    border: none;
+}
+
+.input {
+    height: 100%;
+    min-width: 50vh;
+}
+
+.input h1,
+.input h2,
+.input h3,
+.input p,
+.input img
+{
+    margin: 1rem 0;
+}
+
+.input img{
+    max-height: 50vh;
+}
+
+.floatingAction {
+    background-color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 5px;
+}

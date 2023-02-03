@@ -1,0 +1,31 @@
+.Calendar {
+    display: inline-block;
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.selector {
+  border: none;
+  /* text-align: right; */
+  font-size: 1em;
+}
+
+.selector::after{
+    display: none;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 2em);
+}
+
+.days li {
+  list-style: none;
+}
+
+.days button {
+  width: 100%;
+}
