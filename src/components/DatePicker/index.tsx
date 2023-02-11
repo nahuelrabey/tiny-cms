@@ -1,9 +1,5 @@
 import { useState, MouseEvent, ChangeEvent } from "react";
-import {
-  CalendarMonth,
-  useDatePicker,
-  useMonthsActions,
-} from "@rehookify/datepicker";
+import { useDatePicker } from "@rehookify/datepicker";
 import styles from "./picker.module.css";
 import Selector from "./selector";
 /**
@@ -14,9 +10,7 @@ export default function Calendar() {
   const [selectedDates, onDatesChange] = useState<Date[]>([]);
   const {
     data: { weekDays, calendars, months },
-    propGetters: {
-      dayButton,
-    },
+    propGetters: { dayButton },
     actions: { setMonth, setYear },
   } = useDatePicker({
     selectedDates,
@@ -60,23 +54,32 @@ export default function Calendar() {
 
   const onYearSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     const year = e.target.value;
-    setYear(new Date(year));
-  }
+    const _year = new Date(Number(year), 0, 1);
+    console.log(_year);
+    setYear(_year);
+  };
 
+  console.log(days);
 
   return (
     <section className={styles.Calendar}>
       <header className={styles.header}>
-        <Selector>
-          {months.map((dpMonth, index) => {
-            return (
-              <option key={index} value={dpMonth.month}>
-                {dpMonth.month}
-              </option>
-            );
-          })}
-        </Selector>
-        {/* <select onChange={onMonthSelect} value={month} className={styles.selector}>
+        <select
+          value={Number(year)}
+          onChange={onYearSelect}
+          className={styles.selector}
+        >
+          {[...Array(100).keys()].map((value) => (
+            <option key={value} value={1977 + value}>
+              {1976 + value}
+            </option>
+          ))}
+        </select>
+        <select
+          onChange={onMonthSelect}
+          value={month}
+          className={styles.selector}
+        >
           {months.map((dpMonth, index) => {
             return (
               <option key={index} value={dpMonth.month}>
@@ -85,21 +88,19 @@ export default function Calendar() {
             );
           })}
         </select>
-        <select value={Number(year)} onChange={onYearSelect} className={styles.selector}>
-          {[...Array(100).keys()].map((value) => (
-            <option key={value} value={1977 + value}>
-              {1977 + value}
-            </option>
-          ))}
-        </select> */}
       </header>
       <ul className={styles.days}>
         {weekDays.map((day) => (
-          <li key={`${month}-${day}`}>{day}</li>
+          <li key={`${month}-${day}`} className={styles.dayName}>{day}</li>
         ))}
         {days.map((dpDay) => (
           <li key={`${dpDay.$date.getMonth()}-${dpDay.day}`}>
-            <button {...dayButton(dpDay, { onClick: onDayClick })}>
+            <button
+              {...dayButton(dpDay, { onClick: onDayClick })}
+              className={
+                dpDay.inCurrentMonth ? styles.current : styles.notcurrent
+              }
+            >
               {dpDay.day}
             </button>
           </li>
@@ -108,4 +109,3 @@ export default function Calendar() {
     </section>
   );
 }
-

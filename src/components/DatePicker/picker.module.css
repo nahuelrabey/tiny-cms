@@ -11,6 +11,12 @@
   border: none;
   /* text-align: right; */
   font-size: 1em;
+  appearance: none;
+  text-align: center;
+}
+
+.selector:hover {
+  cursor: pointer;
 }
 
 .selector::after{
@@ -28,4 +34,19 @@
 
 .days button {
   width: 100%;
+  border: none;
+}
+
+.current {
+  background-color: white;
+  color: black
+}
+
+.days .current:hover {
+  cursor: pointer;
+}
+
+.dayName {
+  text-align: center;
+  margin: 5px 0;
 }

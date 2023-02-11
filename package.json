@@ -13,6 +13,7 @@
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-dropdown-menu": "^2.0.2",
     "@radix-ui/react-icons": "^1.1.1",
+    "@radix-ui/react-scroll-area": "^1.0.2",
     "@rehookify/datepicker": "^4.0.0",
     "@tiptap/extension-image": "^2.0.0-beta.209",
     "@tiptap/react": "^2.0.0-beta.209",
