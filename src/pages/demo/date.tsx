@@ -12,7 +12,7 @@ export default function Calendar() {
         setStartDate(date)
     }
     return (
-        <div style={{ margin: "2em auto", width: "20%" }}>
+        <div style={{ margin: "2em auto", width:"fit-content" }}>
             <DatePicker/>
         </div>
     );

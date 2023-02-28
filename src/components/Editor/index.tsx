@@ -5,6 +5,7 @@ import Image from '@tiptap/extension-image'
 
 import styles from "./Editor.module.css"
 import Cover from './AddCover'
+import DatePicker from '../DatePicker'
 
 
 const Editor = () => {
@@ -55,6 +56,8 @@ const Editor = () => {
         <fieldset className={styles.TitleForm}>
           <input type="text" name="title" id="title" placeholder='Título'/>
         </fieldset>
+
+        <DatePicker/>
 
         {content && <FloatingMenu editor={content}>
           <button onClick={onAddImage} className={styles.floatingAction}>Add Image</button>

@@ -2,7 +2,6 @@
 import * as Dialog from "@radix-ui/react-dialog"
 import { Cross2Icon } from '@radix-ui/react-icons';
 
-import Image from "next/image"
 import { useState } from "react";
 
 import style from "./AddCover.module.css"
